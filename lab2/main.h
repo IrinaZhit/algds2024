@@ -16,4 +16,6 @@ Node* rotateRight(Node* y);
 
 Node* rotateLeft(Node* x);
 
+Node* split(Node* root, int key, Node** left, Node** right);
+
 #endif
