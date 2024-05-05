@@ -49,3 +49,16 @@ Node* rotateLeft(Node* x) {
     y->left = x;
     return y;
 }
+
+Node* split(Node* root, int key, Node** left, Node** right) {
+    if (!root) {
+        *left = *right = NULL;
+    } else if (key < root->key) {
+        split(root->left, key, left, &root->left);
+        *right = root;
+    } else {
+        split(root->right, key, &root->right, right);
+        *left = root;
+    }
+    return root;
+}
